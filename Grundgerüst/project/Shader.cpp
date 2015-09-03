@@ -73,7 +73,7 @@ std::string Shader::get_shader_source(char *path){
 
 	file.close();
 
-	std::cout << output << std::endl;
+	//std::cout << output << std::endl;
 
 	return output;
 

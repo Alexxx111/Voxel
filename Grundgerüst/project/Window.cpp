@@ -9,7 +9,7 @@ Window::Window(int w, int h)
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 
-	window = SDL_CreateWindow(".. ", 100, 100, width, height, SDL_WINDOW_OPENGL);
+	window = SDL_CreateWindow(".. ", 600, 100, width, height, SDL_WINDOW_OPENGL);
 
 	context = SDL_GL_CreateContext(window);
 
@@ -24,9 +24,12 @@ Window::~Window()
 }
 
 void Window::clear(){
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 }
 
 void Window::flip(){
 	SDL_GL_SwapWindow(window);
+}
+SDL_Window *Window::get_window(){
+	return this->window;
 }

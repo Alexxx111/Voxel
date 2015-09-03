@@ -1,6 +1,6 @@
 #pragma once
 #include "SDL.h"
-#include "glm.hpp"
+#include "glm\glm.hpp"
 #include "glew.h"
 
 
@@ -12,6 +12,8 @@ public:
 
 	void flip();
 	void clear();
+
+	SDL_Window * get_window();
 
 private:
 	SDL_GLContext context;

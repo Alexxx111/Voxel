@@ -1,36 +1,46 @@
 #pragma once
 #include "glew.h"
-#include "glm.hpp"
+#include "glm\glm.hpp"
+#include "glm\gtc\matrix_transform.hpp"
+
+#include <string>
 #include <vector>
 #include <iostream>
-
+#include <fstream>
 
 class Vertex{
 public:
 
 	Vertex::Vertex(glm::vec3 pos, glm::vec3 color, glm::vec3 normal){
-		this->color = color;
 		this->position = pos;
+		this->color = color;
 		this->normal = normal;
 	}
 
 private:
+	glm::vec3 position;
 
 	glm::vec3 color;
-	glm::vec3 position;
 	glm::vec3 normal;
 
 
 };
 
-class GameObject
+class Mesh
 {
 public:
-	GameObject();
-	~GameObject();
+	
+	Mesh(glm::vec3 pos);
+	~Mesh();
 
-	void render();
-	void update();
+	void render(GLuint program);
+	void load_obj(char*path);
+
+
+	glm::mat4 get_model_matrix();
+
+protected:
+	glm::vec3 position;
 
 private:
 	
@@ -38,7 +48,8 @@ private:
 	std::vector<GLushort> index;
 	std::vector<Vertex> verts;
 
+	glm::mat4 model;
 
-
+	GLint modelMatrixLocation;
 };
 
