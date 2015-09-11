@@ -6,7 +6,7 @@ Camera::Camera(glm::vec3 pos) : GameObject(pos)
 	lookAt = glm::vec3(0.f, 0.f, -1.f);
 	up = glm::vec3(0.f, 1.f, 0.f);
 
-	speed = 0.05f;
+	speed = 0.2f;
 }
 
 

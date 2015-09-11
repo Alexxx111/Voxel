@@ -3,6 +3,7 @@
 #include "Floor.h"
 #include "Shader.h"
 #include "Camera.h"
+#include "Player.h"
 
 class Scene
 {
@@ -19,6 +20,7 @@ public:
 	GLuint program;
 	Camera *c;
 	Floor *f;
+	Player *p;
 	Shader*vertexShader,* fragmentShader;
 
 	GLint viewMatrixLocation, projectionMatrixLocation;

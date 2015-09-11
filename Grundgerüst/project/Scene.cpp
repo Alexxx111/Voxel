@@ -18,13 +18,16 @@ Scene::Scene(Window *window)
 
 	in = new Inputhandler(window);
 	
-	c = new Camera(glm::vec3(0.f, 0.f, 1.f));
+	c = new Camera(glm::vec3(0.f, 1.f, 1.f));
 	f = new Floor(glm::vec3(0.f, 0.f, -4.f));
+	p = new Player(glm::vec3(0.f, -0.3f, 0.f));
 
-	objects.push_back(c);
+	//objects.push_back(c);
 	objects.push_back(f);
+	objects.push_back(p);
 
 	in->register_observer(*c);
+	in->register_observer(*p);
 }
 
 

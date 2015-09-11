@@ -3,7 +3,7 @@
 
 Floor::Floor(glm::vec3 pos) : GameObject(pos)
 {
-	meshs.push_back(new Mesh(pos));
+	meshs.push_back(new Mesh(pos, "..\\res\\cube.obj"));
 }
 
 

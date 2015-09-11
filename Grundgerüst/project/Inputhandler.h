@@ -14,7 +14,7 @@ public:
 
 	bool get_input();
 
-	bool w, a, s, d;
+	bool w, a, s, d, p, up, down, right, left;
 	int distX, distY;
 
 private:
@@ -22,6 +22,6 @@ private:
 
 	std::vector<GameObject*> observers;
 
-	bool keys[6];
+	bool keys[10];
 };
 

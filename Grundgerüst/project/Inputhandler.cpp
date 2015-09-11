@@ -8,6 +8,11 @@ Inputhandler::Inputhandler(Window *window)
 	a = false;
 	d = false;
 	s = false;
+	p = false;
+	left = false;
+	right = false;
+	up = false;
+	down = false;
 
 	keys[0] = false;
 	keys[1] = false;
@@ -15,6 +20,13 @@ Inputhandler::Inputhandler(Window *window)
 	keys[3] = false;
 	keys[4] = false;
 	keys[5] = false;
+	keys[6] = false; //p
+	keys[7] = false;//up
+	keys[8] = false;//down
+	keys[9] = false;//left
+	keys[10] = false;//right
+
+
 }
 
 
@@ -56,6 +68,23 @@ bool Inputhandler::get_input(){
 			if (e.key.keysym.sym == SDLK_LSHIFT){
 				keys[5] = true;
 			}
+			if (e.key.keysym.sym == SDLK_p){
+				keys[6] = true;
+			}
+			if (e.key.keysym.sym == SDLK_UP){
+				keys[7] = true;
+			}
+			if (e.key.keysym.sym == SDLK_DOWN){
+				keys[8] = true;
+			}
+			if (e.key.keysym.sym == SDLK_LEFT){
+				keys[9] = true;
+
+			}
+			if (e.key.keysym.sym == SDLK_RIGHT){
+				keys[10] = true;
+
+			}
 		}
 
 		if (e.type == SDL_KEYUP){
@@ -77,6 +106,23 @@ bool Inputhandler::get_input(){
 			}
 			if (e.key.keysym.sym == SDLK_LSHIFT){
 				keys[5] = false;
+			}
+			if (e.key.keysym.sym == SDLK_p){
+				keys[6] = false;
+			}
+			if (e.key.keysym.sym == SDLK_UP){
+				keys[7] =false;
+			}
+			if (e.key.keysym.sym == SDLK_DOWN){
+				keys[8] = false;
+			}
+			if (e.key.keysym.sym == SDLK_LEFT){
+				keys[9] = false;
+
+			}
+			if (e.key.keysym.sym == SDLK_RIGHT){
+				keys[10] = false;
+
 			}
 		}
 

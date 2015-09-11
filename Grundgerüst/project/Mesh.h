@@ -2,7 +2,9 @@
 #include "glew.h"
 #include "glm\glm.hpp"
 #include "glm\gtc\matrix_transform.hpp"
+#include "Animation.h"
 
+#include <random>
 #include <string>
 #include <vector>
 #include <iostream>
@@ -30,14 +32,20 @@ class Mesh
 {
 public:
 	
-	Mesh(glm::vec3 pos);
+	Mesh(glm::vec3 pos, char* path);
 	~Mesh();
 
-	void render(GLuint program);
+	void render(GLuint program, float angle);
 	void load_obj(char*path);
 
-
+	void set_position(glm::vec3 pos);
 	glm::mat4 get_model_matrix();
+
+	std::vector<Animation*> animations;
+
+	glm::vec3 orientation;
+
+	float rotation;
 
 protected:
 	glm::vec3 position;
@@ -49,6 +57,7 @@ private:
 	std::vector<Vertex> verts;
 
 	glm::mat4 model;
+
 
 	GLint modelMatrixLocation;
 };
