@@ -1,0 +1,18 @@
+//dur -> duration of the animation
+//key -> key time
+//r -> rotation angle/axis.x/axis.y/axis.z
+//p -> position p.x/p.y/p.z
+
+dur 40
+
+key 0 
+p 0/3.3/0.4
+r -0.01/1/0/0
+
+key 20
+p 0/3.33/0.4
+r 0.01/1/0/0
+
+key 40
+p 0/3.3/0.4
+r -0.01/1/0/0
